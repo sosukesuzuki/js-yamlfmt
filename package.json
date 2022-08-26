@@ -1,12 +1,14 @@
 {
   "name": "js-yamlfmt",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "packageManager": "yarn@3.2.3",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@moonrepo/cli": "^0.12.1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "moon": "$(yarn bin moon)"
+  }
 }
