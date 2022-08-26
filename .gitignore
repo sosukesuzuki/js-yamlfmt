@@ -9,3 +9,5 @@
 .moon/cache
 
 node_modules
+
+tsconfig.tsbuildinfo
