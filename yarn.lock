@@ -87,6 +87,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.7.13":
+  version: 18.7.13
+  resolution: "@types/node@npm:18.7.13"
+  checksum: 45431e7e89ecaf85c7d2c180d801c132a7c59e2f8ad578726b6d71cc74e3267c18f9ccdcad738bc0479790c078f0c79efb0e58da2c6be535c15995dbb19050c9
+  languageName: node
+  linkType: hard
+
 "detect-libc@npm:^2.0.1":
   version: 2.0.1
   resolution: "detect-libc@npm:2.0.1"
@@ -99,5 +106,35 @@ __metadata:
   resolution: "js-yamlfmt@workspace:."
   dependencies:
     "@moonrepo/cli": ^0.12.1
+    "@types/node": ^18.7.13
+    tsconfig-moon: ^1.0.0
+    typescript: ^4.8.2
   languageName: unknown
   linkType: soft
+
+"tsconfig-moon@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "tsconfig-moon@npm:1.0.0"
+  checksum: 5c32a3856c08be57c7c71d1e1ad54fa8b755b9b18330c0fcf5080a45d0a53367288429e4920c14b882af0eb68799c47a4ddaf99eb96fdab294cfe1ea50d1eff2
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^4.8.2":
+  version: 4.8.2
+  resolution: "typescript@npm:4.8.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 7f5b81d0d558c9067f952c7af52ab7f19c2e70a916817929e4a5b256c93990bf3178eccb1ac8a850bc75df35f6781b6f4cb3370ce20d8b1ded92ed462348f628
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.8.2#~builtin<compat/typescript>":
+  version: 4.8.2
+  resolution: "typescript@patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 5cb0f02f414f5405f4b0e7ee1fd7fa9177b6a8783c9017b6cad85f56ce4c4f93e0e6f2ce37e863cb597d44227cd009474c9fbd85bf7a50004e5557426cb58079
+  languageName: node
+  linkType: hard

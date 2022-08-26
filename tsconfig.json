@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.options.json",
+  "files": [],
+  "references": [
+    {
+      "path": "packages/node"
+    },
+    {
+      "path": "packages/wasm"
+    }
+  ]
+}

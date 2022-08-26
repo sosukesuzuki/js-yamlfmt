@@ -1,4 +1,4 @@
-$schema: 'https://moonrepo.dev/schemas/workspace.json'
+$schema: "https://moonrepo.dev/schemas/workspace.json"
 
 # Extend and inherit an external configuration file. Must be a valid HTTPS URL or file system path.
 # extends: './shared/workspace.yml'
@@ -8,45 +8,18 @@ $schema: 'https://moonrepo.dev/schemas/workspace.json'
 # path to the project folder as the map value. File paths are relative from the workspace root,
 # and cannot reference projects located outside the workspace boundary.
 projects:
-  example: 'apps/example'
+  wasm: "packages/wasm"
+  node: "packages/node"
+  playground: "apps/playground"
 
 # Configures Node.js within the toolchain. moon manages its own version of Node.js
 # instead of relying on a version found on the host machine. This ensures deterministic
 # and reproducible builds across any machine.
 node:
-  # The version to use. Must be a semantic version that includes major, minor, and patch.
-  # We suggest using the latest active LTS version: https://nodejs.org/en/about/releases
-  version: '16.16.0'
-
-  # The package manager to use when managing dependencies.
-  # Accepts "npm" (default), "pnpm", or "yarn".
-  packageManager: 'yarn'
-
-  # The version of the package manager (above) to use.
+  version: "16.16.0"
+  packageManager: "yarn"
   yarn:
-    version: '3.2.3'
-
-  # Add `node.version` as a constraint in the root `package.json` `engines`.
-  addEnginesConstraint: true
-
-  # Use the `package.json` name as an alias for the respective moon project.
-  # Do note that this requires eager loading all `package.json`s in the repo.
-  aliasPackageNames: false
-
-  # Dedupe dependencies after the lockfile has changed.
-  dedupeOnLockfileChange: true
-
-  # Infer and automatically create moon tasks from `package.json` scripts, per project.
-  # Do note that this requires eager loading all `package.json`s in the repo.
-  # BEWARE: Tasks and scripts are not 1:1 in functionality, so please refer to the documentation.
-  inferTasksFromScripts: false
-
-  # Sync a project's `dependsOn` as dependencies within the project's `package.json`.
-  syncProjectWorkspaceDependencies: true
-
-  # Sync `node.version` to a 3rd-party version manager's config file.
-  # Accepts "nodenv" (.node-version), "nvm" (.nvmrc), or none.
-  # syncVersionManagerConfig: 'nvm'
+    version: "3.2.3"
 
 # Configures how moon integrates with TypeScript.
 typescript:
@@ -55,14 +28,14 @@ typescript:
   createMissingConfig: true
 
   # Name of `tsconfig.json` file in the project root.
-  projectConfigFileName: 'tsconfig.json'
+  projectConfigFileName: "tsconfig.json"
 
   # Name of `tsconfig.json` file in the workspace root.
-  rootConfigFileName: 'tsconfig.json'
+  rootConfigFileName: "tsconfig.json"
 
   # Name of the config file in the workspace root that defines shared compiler options
   # for all project reference based config files.
-  rootOptionsConfigFileName: 'tsconfig.options.json'
+  rootOptionsConfigFileName: "tsconfig.options.json"
 
   # Sync a project's `dependsOn` as TypeScript project references within the
   # project's `tsconfig.json` and the workspace root `tsconfig.json`.
@@ -74,9 +47,9 @@ typescript:
 vcs:
   # The manager/binary to use when managing the repository.
   # Accepts "git", or "svn". Defaults to "git".
-  manager: 'git'
+  manager: "git"
 
   # The default branch (master/main/trunk) in the repository for comparing the
   # local branch against. For git, this is is typically "master" or "main",
   # and must include the remote prefix (before /). For svn, this should always be "trunk".
-  defaultBranch: 'master'
+  defaultBranch: "master"

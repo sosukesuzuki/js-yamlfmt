@@ -1,0 +1,8 @@
+type: "tool"
+language: "typescript"
+project:
+  name: "node"
+  description: "yamlfmt CLI working on Node.js"
+  owner: "sosukesuzuki"
+  maintainers: ["sosukesuzuki"]
+  channel: "#na"

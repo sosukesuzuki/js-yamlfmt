@@ -1,0 +1,12 @@
+type: "library"
+language: "typescript"
+project:
+  name: "wasm"
+  description: "WebAssembly binding of yamlfmt"
+  owner: "sosukesuzuki"
+  maintainers: ["sosukesuzuki"]
+  channel: "#na"
+tasks:
+  typecheck:
+    args:
+      - "--force"
