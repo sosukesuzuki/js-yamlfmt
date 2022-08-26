@@ -55,3 +55,22 @@ tasks:
       - "tsconfig.json"
       - "tsconfig.*.json"
       - "/tsconfig.options.json"
+  lint:
+    command:
+      - "eslint"
+      - "--ext"
+      - ".js,.jsx,.ts,.tsx"
+      - "--fix"
+      - "--report-unused-disable-directives"
+      - "--no-error-on-unmatched-pattern"
+      - "--exit-on-fatal-error"
+      - "--ignore-path"
+      - "@in(4)"
+      - "."
+    inputs:
+      - "src/**/*"
+      - "tests/**/*"
+      - "*.config.*"
+      - "**/.eslintrc.*"
+      - "/.eslintignore"
+      - "/.eslintrc.*"
