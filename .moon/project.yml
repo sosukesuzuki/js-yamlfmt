@@ -60,7 +60,6 @@ tasks:
       - "eslint"
       - "--ext"
       - ".js,.jsx,.ts,.tsx"
-      - "--fix"
       - "--report-unused-disable-directives"
       - "--no-error-on-unmatched-pattern"
       - "--exit-on-fatal-error"
