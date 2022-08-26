@@ -73,3 +73,11 @@ tasks:
       - "**/.eslintrc.*"
       - "/.eslintignore"
       - "/.eslintrc.*"
+  format:
+    command:
+      - "prettier"
+      - "--check"
+      - "."
+    inputs:
+      - "src/**/*"
+      - "tests/**/*"
