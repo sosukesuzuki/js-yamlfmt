@@ -1,0 +1,26 @@
+{
+  "name": "@js-yamlfmt/playground",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Playground app for yamlfmt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sosukesuzuki/js-yamlfmt.git"
+  },
+  "author": {
+    "name": "Sosuke Suzuki"
+  },
+  "keywords": [
+    "yaml"
+  ],
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.1",
+    "vite": "^3.0.9"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

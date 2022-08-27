@@ -3,6 +3,9 @@
   "files": [],
   "references": [
     {
+      "path": "apps/playground"
+    },
+    {
       "path": "packages/node"
     },
     {

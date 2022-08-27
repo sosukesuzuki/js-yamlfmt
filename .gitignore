@@ -18,3 +18,5 @@ mjs
 
 tsconfig.tsbuildinfo
 tsconfig.*.tsbuildinfo
+
+dist/

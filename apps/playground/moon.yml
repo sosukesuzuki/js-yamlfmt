@@ -1,0 +1,39 @@
+type: "application"
+language: "typescript"
+project:
+  name: "playground"
+  description: "Playground app for yamlfmt"
+  owner: "sosukesuzuki"
+  maintainers: ["sosukesuzuki"]
+  channel: "#na"
+fileGroups:
+  vite:
+    - "src/**/*"
+    - "env.d.ts"
+    - "index.html"
+    - "vite.config.*"
+tasks:
+  typecheck:
+    args:
+      - "--force"
+
+  dev:
+    command: "vite dev"
+    inputs:
+      - "@group(vite)"
+    local: true
+
+  build:
+    command: "vite build"
+    inputs:
+      - "@group(vite)"
+    outputs:
+      - "dist"
+
+  preview:
+    command: "vite preview"
+    inputs:
+      - "@group(vite)"
+    deps:
+      - "~:build"
+    local: true
