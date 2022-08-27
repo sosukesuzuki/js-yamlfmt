@@ -1,6 +1,6 @@
 # `js-yamlfmt/wasm`
 
-WebAssembly binding for [yamlfmt](https://github.com/google/yamlfmt).
+[yamlfmt](https://github.com/google/yamlfmt) JavaScript library.
 
 Works on Node.js and Browsers(module bundlers).
 
