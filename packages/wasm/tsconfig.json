@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "outDir": "dts",
-    "rootDir": "."
+    "rootDir": ".",
+    "noImplicitAny": false
   },
   "exclude": ["dts"],
   "include": ["**/*", ".eslintrc.js"],

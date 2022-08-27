@@ -5,13 +5,13 @@ function throwError(message: string) {
 }
 
 async function initialize(): Promise<(source: string) => string> {
-  // @ts-expect-error
   globalThis.throwError = throwError;
+  await import("./wasm_exec.js");
+  // @ts-expect-error
+  const go = new global.global();
   // @ts-expect-error
   const { instance } = await WebAssembly.instantiate(getBuf(), go.importObject);
-  // @ts-expect-error
   go.run(instance);
-  // @ts-expect-error
   return globalThis.runYamlFmt;
 }
 
