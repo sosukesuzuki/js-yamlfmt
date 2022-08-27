@@ -1,4 +1,17 @@
 {
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "WebAssembly binding of yamlfmt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sosukesuzuki/js-yamlfmt.git"
+  },
+  "author": {
+    "name": "Sosuke Suzuki"
+  },
+  "keywords": [
+    "yaml"
+  ],
   "name": "@js-yamlfmt/node",
   "packemon": {
     "platform": "node"
