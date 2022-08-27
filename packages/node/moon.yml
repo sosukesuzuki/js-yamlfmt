@@ -6,15 +6,12 @@ project:
   owner: "sosukesuzuki"
   maintainers: ["sosukesuzuki"]
   channel: "#na"
-
 dependsOn:
   - "wasm"
-
 workspace:
   inheritedTasks:
     rename:
       buildPackage: "build"
-
 tasks:
   typecheck:
     args:

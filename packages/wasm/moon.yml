@@ -6,25 +6,21 @@ project:
   owner: "sosukesuzuki"
   maintainers: ["sosukesuzuki"]
   channel: "#na"
-
 workspace:
   inheritedTasks:
     rename:
       buildPackage: "build"
-
 tasks:
   build:
     deps:
       - "wasm:cp-wasm-exec"
       - "wasm:wasm-module"
-
   typecheck:
     args:
       - "--force"
     deps:
       - "wasm:cp-wasm-exec"
       - "wasm:wasm-module"
-
   wasm-module:
     type: "system"
     command:
@@ -33,7 +29,6 @@ tasks:
       - "./scripts/gen-wasm-module.mjs"
     deps:
       - "wasm:build-wasm"
-
   cp-wasm-exec:
     type: "system"
     command:
@@ -42,7 +37,6 @@ tasks:
       - "./scripts/cp-wasm-exec.sh"
     outputs:
       - "wasm_exec.js"
-
   build-wasm:
     type: "system"
     command:

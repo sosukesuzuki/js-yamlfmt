@@ -1,27 +1,30 @@
-import { runYamlFmt } from "@js-yamlfmt/wasm";
+import path from "node:path";
+import meow from "meow";
+import { globby } from "globby";
+import Tinypool from "tinypool";
 
-const foo = `
-type: "tool"
-language: "typescript"
-project:
-  name: "node"
-  description: "yamlfmt CLI working on Node.js"
-  owner: "sosukesuzuki"
-  maintainers: ["sosukesuzuki"]
-  channel: "#na"
+const cli = meow(
+  `Usage
+		$ node-yamlfmt .`,
+  { importMeta: import.meta }
+);
 
-dependsOn:
-  - "wasm"
+async function processCli(input?: string) {
+  if (!input) {
+    throw new Error("input is required.");
+  }
+  const exts = new Set([".yml", ".yaml"]);
+  const files = (
+    await globby(input, { absolute: true, gitignore: true })
+  ).filter((file) => exts.has(path.extname(file)));
+  const pool = new Tinypool({
+    filename: new URL("./worker.mjs", import.meta.url).href,
+  });
+  await Promise.all(
+    files.map((file) => {
+      return pool.run(file);
+    })
+  );
+}
 
-workspace:
-  inheritedTasks:
-    rename:
-      buildPackage: "build"
-
-tasks:
-  typecheck:
-    args:
-      - "--force"
-`;
-
-runYamlFmt(foo).then((f) => console.log(f));
+processCli(cli.input[0]);
