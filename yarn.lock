@@ -1715,7 +1715,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@js-yamlfmt/wasm@workspace:packages/wasm":
+"@js-yamlfmt/node@workspace:packages/node":
+  version: 0.0.0-use.local
+  resolution: "@js-yamlfmt/node@workspace:packages/node"
+  dependencies:
+    "@js-yamlfmt/wasm": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
+"@js-yamlfmt/wasm@workspace:^, @js-yamlfmt/wasm@workspace:packages/wasm":
   version: 0.0.0-use.local
   resolution: "@js-yamlfmt/wasm@workspace:packages/wasm"
   languageName: unknown
