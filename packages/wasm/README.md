@@ -1,4 +1,4 @@
-# `js-yamlfmt/wasm`
+# `@js-yamlfmt/wasm`
 
 [yamlfmt](https://github.com/google/yamlfmt) JavaScript library.
 
