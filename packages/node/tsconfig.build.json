@@ -2,8 +2,11 @@
   "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "outDir": "dts",
-    "rootDir": "src"
+    "rootDir": "src",
+    "isolatedModules": false,
+    "lib": ["ES2022"]
   },
+  "exclude": ["dts"],
   "include": ["src/**/*"],
   "references": [
     {
