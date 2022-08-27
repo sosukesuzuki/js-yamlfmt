@@ -1,0 +1,33 @@
+{
+  "name": "@js-yamlfmt/wasm",
+  "packemon": {
+    "platform": "node"
+  },
+  "types": "./dts/index.d.ts",
+  "main": "./mjs/index.mjs",
+  "type": "module",
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">=6.14.0"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": {
+        "import": "./mjs/*.mjs"
+      }
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": {
+        "import": "./mjs/index.mjs"
+      }
+    }
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "mjs/**/*.{mjs,map}",
+    "src/**/*.{ts,tsx,json}"
+  ]
+}

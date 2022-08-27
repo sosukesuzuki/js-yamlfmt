@@ -42,6 +42,31 @@ fileGroups:
 # This setting requires a map, where the key is a unique name for the task,
 # and the value is an object of task parameters.
 tasks:
+  buildPackage:
+    command:
+      - "packemon"
+      - "pack"
+      # Add `engines` field to package
+      - "--addEngines"
+      # Add `exports` field to package
+      - "--addExports"
+      # Generate TypeScript declarations
+      - "--declaration"
+      - "--declarationConfig"
+      - "tsconfig.build.json"
+    inputs:
+      # Source files only
+      - "src/**/*"
+      - "package.json"
+      # A build specific tsconfig
+      - "tsconfig.build.json"
+      - "/tsconfig.options.json"
+    outputs:
+      # Matches `compilerOptions.outDir`
+      - "dts"
+    env:
+      NODE_ENV: "production"
+
   typecheck:
     command:
       - "tsc"
@@ -55,6 +80,7 @@ tasks:
       - "tsconfig.json"
       - "tsconfig.*.json"
       - "/tsconfig.options.json"
+
   lint:
     command:
       - "eslint"

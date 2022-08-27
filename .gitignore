@@ -11,3 +11,10 @@
 node_modules
 
 dts
+
+esm
+lib
+mjs
+
+tsconfig.tsbuildinfo
+tsconfig.*.tsbuildinfo

@@ -6,7 +6,18 @@ project:
   owner: "sosukesuzuki"
   maintainers: ["sosukesuzuki"]
   channel: "#na"
+
+workspace:
+  inheritedTasks:
+    rename:
+      buildPackage: "build"
+
 tasks:
+  build:
+    deps:
+      - "wasm:cp-wasm-exec"
+      - "wasm:wasm-module"
+
   typecheck:
     args:
       - "--force"
