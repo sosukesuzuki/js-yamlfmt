@@ -1,3 +1,4 @@
+// @ts-ignore
 import { getBuf } from "./wasm.js";
 
 function throwError(message: string) {
