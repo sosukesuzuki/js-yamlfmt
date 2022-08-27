@@ -10,3 +10,24 @@ tasks:
   typecheck:
     args:
       - "--force"
+    deps:
+      - "wasm:cp-wasm-exec"
+      - "wasm:build-wasm"
+
+  cp-wasm-exec:
+    type: "system"
+    command:
+      - "bash"
+    args:
+      - "./scripts/cp-wasm-exec.sh"
+    outputs:
+      - "wasm_exec.js"
+
+  build-wasm:
+    type: "system"
+    command:
+      - "bash"
+    args:
+      - "./scripts/build-wasm.sh"
+    outputs:
+      - "main.wasm"
