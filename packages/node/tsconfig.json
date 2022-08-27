@@ -4,9 +4,19 @@
     "outDir": "dts",
     "rootDir": ".",
     "isolatedModules": false,
-    "lib": ["ES2022"]
+    "lib": [
+      "ES2022"
+    ]
   },
-  "exclude": ["dts"],
-  "include": ["**/*"],
-  "references": []
+  "exclude": [
+    "dts"
+  ],
+  "include": [
+    "**/*"
+  ],
+  "references": [
+    {
+      "path": "../wasm"
+    }
+  ]
 }

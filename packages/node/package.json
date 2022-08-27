@@ -1,5 +1,5 @@
 {
-  "name": "@js-yamlfmt/wasm",
+  "name": "@js-yamlfmt/node",
   "packemon": {
     "platform": "node"
   },
@@ -29,5 +29,8 @@
     "dts/**/*.d.ts",
     "mjs/**/*.{mjs,map}",
     "src/**/*.{ts,tsx,json}"
-  ]
+  ],
+  "dependencies": {
+    "@js-yamlfmt/wasm": "workspace:^"
+  }
 }
