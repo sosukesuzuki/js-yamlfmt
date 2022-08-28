@@ -1,3 +1,5 @@
+#!/bin/bash
+
 GOROOT=`go env GOROOT`
 
 ls $(pwd)/src
