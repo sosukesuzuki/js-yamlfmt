@@ -8,7 +8,7 @@ function throwError(message: string) {
 async function initialize(): Promise<(source: string) => string> {
   globalThis.throwError = throwError;
   await import("./wasm_exec.js");
-  const go = new global.Go();
+  const go = new globalThis.Go();
   // @ts-expect-error
   const { instance } = await WebAssembly.instantiate(getBuf(), go.importObject);
   go.run(instance);

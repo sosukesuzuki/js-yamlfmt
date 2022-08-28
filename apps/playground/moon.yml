@@ -6,6 +6,8 @@ project:
   owner: "sosukesuzuki"
   maintainers: ["sosukesuzuki"]
   channel: "#na"
+dependsOn:
+  - "wasm"
 fileGroups:
   vite:
     - "src/**/*"

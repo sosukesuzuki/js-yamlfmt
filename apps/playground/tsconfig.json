@@ -6,9 +6,20 @@
     "noImplicitAny": false,
     "noEmit": true,
     "jsx": "react-jsx",
-    "lib": ["DOM"]
+    "lib": [
+      "DOM"
+    ]
   },
-  "exclude": ["dts"],
-  "include": ["**/*", ".eslintrc.js"],
-  "references": []
+  "exclude": [
+    "dts"
+  ],
+  "include": [
+    "**/*",
+    ".eslintrc.js"
+  ],
+  "references": [
+    {
+      "path": "../../packages/wasm"
+    }
+  ]
 }
