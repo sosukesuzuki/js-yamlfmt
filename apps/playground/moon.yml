@@ -26,7 +26,7 @@ tasks:
     local: true
 
   build:
-    command: "vite build"
+    command: "vite build --base=/js-yamlfmt/"
     inputs:
       - "@group(vite)"
     outputs:
