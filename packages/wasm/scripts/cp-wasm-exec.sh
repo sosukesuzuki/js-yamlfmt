@@ -1,9 +1,5 @@
 GOROOT=`go env GOROOT`
 
-PROJECT_DIR=$(cd $(dirname $(dirname $0)); pwd)
-pwd
-ls $(pwd)
-ls .
-ls $PROJECT_DIR
+ls $(pwd)/src
 
-cp $GOROOT/misc/wasm/wasm_exec.js ./src/wasm_exec.js
+cp $GOROOT/misc/wasm/wasm_exec.js $(pwd)/src/wasm_exec.js
