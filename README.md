@@ -12,6 +12,4 @@ JS tools for [yamlfmt](https://github.com/google/yamlfmt).
 
 ## todo
 
-- [x] pass CI
 - [ ] build release workflows
-- [ ] build playground website
