@@ -36,7 +36,7 @@ tasks:
     args:
       - "./scripts/cp-wasm-exec.sh"
     outputs:
-      - "wasm_exec.js"
+      - "./src/wasm_exec.js"
   build-wasm:
     type: "system"
     command:
