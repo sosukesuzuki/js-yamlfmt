@@ -10,14 +10,14 @@ Works on Node.js and Browsers(module bundlers).
 import { runYamlFmt } from "@js-yamlfmt/wasm";
 
 const code = `
-foo
+foo:
 - bar
 - baz
 `:
 
 const result = runYamlFmt(code);
 /*
-foo
+foo:
   - bar
   - baz
 */
