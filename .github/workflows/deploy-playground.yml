@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy playground to GitHub Pages
 
 on:
   push:
@@ -6,9 +6,21 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   deploy:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
@@ -21,9 +33,12 @@ jobs:
       - run: yarn moon run wasm:build
       - run: yarn moon run playground:build
       - run: touch ./apps/playground/dist/.nojekyll
-      - uses: JamesIves/github-pages-deploy-action@3.7.1
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          BRANCH: gh-pages
-          FOLDER: apps/playground/dist
-          CLEAN: true
+          path: "./apps/playground/dist"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
