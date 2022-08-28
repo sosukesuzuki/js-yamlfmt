@@ -4,10 +4,12 @@ import { useAtom } from "jotai";
 import type { editor } from "monaco-editor";
 import { FC, useCallback, useEffect, useRef } from "react";
 import { useBorderColor, useMonacoThemeValue } from "../hooks/colors";
+import { useFormattedYaml } from "../hooks/yamlfmt";
 import { codeAtom } from "../state";
 
 export const OutputEditor: FC = () => {
   const [code] = useAtom(codeAtom);
+  const formattedCode = useFormattedYaml(code);
   const borderColor = useBorderColor();
   const monaco = useMonaco();
   const monacoTheme = useMonacoThemeValue();
@@ -35,7 +37,7 @@ export const OutputEditor: FC = () => {
         borderWidth="1px"
       >
         <Editor
-          value={code}
+          value={formattedCode}
           language="yaml"
           theme={monacoTheme}
           onMount={handleEditorMount}
