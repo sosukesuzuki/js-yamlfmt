@@ -3013,10 +3013,14 @@ __metadata:
     "@chakra-ui/react": ^2.2.9
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
+    "@js-yamlfmt/wasm": "workspace:^"
+    "@monaco-editor/react": ^4.4.5
     "@types/react": ^18.0.17
     "@types/react-dom": ^18.0.6
     "@vitejs/plugin-react": ^2.0.1
     framer-motion: ^7.2.1
+    jotai: ^1.8.1
+    monaco-editor: ^0.34.0
     react: ^18.2.0
     react-dom: ^18.2.0
     vite: ^3.0.9
@@ -3040,6 +3044,31 @@ __metadata:
   version: 4.2.1
   resolution: "@mdn/browser-compat-data@npm:4.2.1"
   checksum: 76eaa7dafed154040e769ba6d23f2dcb58e805ed3ccb376a5c4b76326c92643753c20194faed363870800dc3c1af26c107b8562710c8bb37aaee8c5ffe2a89cd
+  languageName: node
+  linkType: hard
+
+"@monaco-editor/loader@npm:^1.3.2":
+  version: 1.3.2
+  resolution: "@monaco-editor/loader@npm:1.3.2"
+  dependencies:
+    state-local: ^1.0.6
+  peerDependencies:
+    monaco-editor: ">= 0.21.0 < 1"
+  checksum: 7a1b65052bbaf4ef826392687bd7cfaf839509611034d2d616783b5d3fee91ed304d9086517c3b5f9099707828c57c855ff43407b3c2f5ae480faebb104d4343
+  languageName: node
+  linkType: hard
+
+"@monaco-editor/react@npm:^4.4.5":
+  version: 4.4.5
+  resolution: "@monaco-editor/react@npm:4.4.5"
+  dependencies:
+    "@monaco-editor/loader": ^1.3.2
+    prop-types: ^15.7.2
+  peerDependencies:
+    monaco-editor: ">= 0.25.0 < 1"
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 7a9568e3c6c27ecb7b4e07803a85554a6decbf0ad789b98fe5cb3d65b3a3682356e7553475b3eaeed5376a963bdc60d94ceb79ed6c3dd212d72a5122164590f2
   languageName: node
   linkType: hard
 
@@ -6505,6 +6534,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jotai@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "jotai@npm:1.8.1"
+  peerDependencies:
+    "@babel/core": "*"
+    "@babel/template": "*"
+    "@tanstack/query-core": "*"
+    "@urql/core": "*"
+    immer: "*"
+    optics-ts: "*"
+    react: ">=16.8"
+    valtio: "*"
+    wonka: "*"
+    xstate: "*"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    "@babel/template":
+      optional: true
+    "@tanstack/query-core":
+      optional: true
+    "@urql/core":
+      optional: true
+    immer:
+      optional: true
+    optics-ts:
+      optional: true
+    valtio:
+      optional: true
+    wonka:
+      optional: true
+    xstate:
+      optional: true
+  checksum: 4569c159bde128d0ece922a7c69bcfba7e105c59e36c5ed531e9fb4dfca40ed2cbcf7e40baa7d6351ff1fb7c7ac10c1c02ca4d338adda3757b607ee8fe781078
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -7029,6 +7095,13 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: a96865108c6c3b1b8e1d5e9f11843de1e077e57737602de1b82030815f311be11f96f09cce59bd5b903d0b29834733e5313f9301e3ed6d6f6fba2eae0df4298f
+  languageName: node
+  linkType: hard
+
+"monaco-editor@npm:^0.34.0":
+  version: 0.34.0
+  resolution: "monaco-editor@npm:0.34.0"
+  checksum: 10a28c1fe07268a23106ec9b743339af603e00c3ce646de72bf74f77e3d44065536f1a11f1a86ed459dfd9cb891261e6c7974377fc511eb65f354d6ddc89275b
   languageName: node
   linkType: hard
 
@@ -8402,6 +8475,13 @@ __metadata:
   dependencies:
     escape-string-regexp: ^2.0.0
   checksum: 76b69da0f5b48a34a0f93c98ee2a96544d2c4ca2557f7eef5ddb961d3bdc33870b46f498a84a7c4f4ffb781df639840e7ebf6639164ed4da5e1aeb659615b9c7
+  languageName: node
+  linkType: hard
+
+"state-local@npm:^1.0.6":
+  version: 1.0.7
+  resolution: "state-local@npm:1.0.7"
+  checksum: d1afcf1429e7e6eb08685b3a94be8797db847369316d4776fd51f3962b15b984dacc7f8e401ad20968e5798c9565b4b377afedf4e4c4d60fe7495e1cbe14a251
   languageName: node
   linkType: hard
 
