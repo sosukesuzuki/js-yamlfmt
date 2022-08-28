@@ -20,5 +20,12 @@ export async function runYamlFmt(source: string): Promise<string> {
   if (!runYamlFmtFunc) {
     runYamlFmtFunc = await initialize();
   }
-  return runYamlFmtFunc(source);
+  let result: string;
+  try {
+    result = runYamlFmtFunc(source);
+  } catch {
+    runYamlFmtFunc = await initialize();
+    result = runYamlFmtFunc(source);
+  }
+  return result;
 }
